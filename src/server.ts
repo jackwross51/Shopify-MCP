@@ -5,6 +5,7 @@ import { registerCustomerTools } from "./tools/customers.js";
 import { registerInventoryTools } from "./tools/inventory.js";
 import { registerDiscountTools } from "./tools/discounts.js";
 import { registerShopTools } from "./tools/shop.js";
+import { registerAnalyticsTools } from "./tools/analytics.js";
 
 export function createServer(): McpServer {
   const server = new McpServer({
@@ -18,6 +19,7 @@ export function createServer(): McpServer {
   registerCustomerTools(server);
   registerInventoryTools(server);
   registerDiscountTools(server);
+  registerAnalyticsTools(server);
 
   return server;
 }

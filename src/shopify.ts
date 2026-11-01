@@ -86,11 +86,12 @@ interface GraphQLResponse<T> {
 
 export async function shopifyGraphql<T = any>(
   query: string,
-  variables: Record<string, unknown> = {}
+  variables: Record<string, unknown> = {},
+  apiVersion: string = API_VERSION
 ): Promise<T> {
   const domain = getDomain();
   const accessToken = await getAccessToken(domain);
-  const url = `https://${domain}/admin/api/${API_VERSION}/graphql.json`;
+  const url = `https://${domain}/admin/api/${apiVersion}/graphql.json`;
 
   const doRequest = (token: string) =>
     fetch(url, {
