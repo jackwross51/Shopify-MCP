@@ -26,6 +26,7 @@ It runs in two modes from the same codebase:
 | `create-automatic-discount` | Create an automatic amount-off-products discount (per item or per order, products/collections, minimums, purchase type, combinations) |
 | `update-automatic-discount` | Change an existing automatic discount's amount, per-item setting, minimum, purchase type, combinations, or dates |
 | `create-discount-code` | Create a percentage or fixed-amount discount code |
+| `list-marketing-activities` | List marketing campaigns (e.g. Shopify Email) with status, channel, UTM campaign and dates. Read-only |
 
 Read tools accept Shopify search query syntax (e.g. `status:active`, `fulfillment_status:unfulfilled`, `created_at:>2026-01-01`) and IDs may be given as bare numbers or full `gid://shopify/...` IDs.
 
@@ -45,6 +46,7 @@ Shopify has deprecated creating custom apps inside the store admin — new apps 
    - `read_inventory`, `write_inventory`
    - `read_discounts`, `write_discounts`
    - `read_locations`
+   - `read_marketing_events` (for `list-marketing-activities`: Shopify Email and other campaigns)
 
    (Only grant `write_*` scopes if you want Claude to be able to make changes. Scopes lock at install time — changing them later means releasing a new version and reinstalling.)
 3. From the app's **Home** panel, use **Install app** to install it on your store.
